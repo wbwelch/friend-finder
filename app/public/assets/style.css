@@ -1,6 +1,3 @@
-@charset "UTF-8";
-/* CSS Document */
-
 .radio-button {
     width: 15px;
 }
@@ -8,7 +5,17 @@ p {
     padding: 5px;
     margin: 5px;
 }
+h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+h3 {
+    font-size: 24px;
+}
 a {
     margin: 20px 10px;
     padding: 20px 0;
+}
+em {
+    font-style: italic;
 }

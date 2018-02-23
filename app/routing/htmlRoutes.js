@@ -1,18 +1,29 @@
-const server = require("./../server.js");
+//require packages
+const express = require("express");
+const path = require("path");
+const port = 3000;
 
-A GET Route to /survey which should display the survey page.
-A default, catch-all route that leads to home.html which displays the home page.
+//set up express
+const app = express();
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "home.html"));
-});
+//routes object
+var routes = {   
+    
+        //index '/'
+        index: app.get("/", function(req, res) {
+            res.sendFile(path.join(__dirname, "../public/home.html"));
+        }),
+    
+        //index 'home.html'
+        indexHome: app.get("/home.html", function(req, res) {
+            res.sendFile(path.join(__dirname, "../public/home.html"));
+        }),
 
-app.get("/survey", function(req, res) {
-    res.sendFile(path.join(__dirname, "survey.html"));
-});
+        //survey
+        survey: app.get("/survey", function(req, res) {
+            res.sendFile(path.join(__dirname, "../public/survey.html"));
+        })
+};
 
-app.listen(port, function() {
-  console.log("Listening on PORT " + port);
-});
-
-module.exports()
+//export routes
+module.exports = routes;

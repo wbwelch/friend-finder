@@ -1,132 +1,290 @@
 <!DOCTYPE html>
 <html>
+    <!--head-->
     <head>
         
+        <!--meta-->
         <meta charset="utf-8">
         
+        <!--title-->
         <title>Make a Friend</title>
         
-
+        <!--stylesheets-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="assets/style.css">
         
-        
     </head>
 
+    <!--body-->
     <body>
         
+        <!--main container-->
         <div class="container">
             
+            <!--jumbotron-->
             <div class="jumbotron" style="text-align: center;">
                 
                 <h1>My Friend Maker</h1>
-                
-                <hr>
-                
-                <a href="survey.html"><button type="button" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Take the Survey</button></a>
                 
             </div>
             
             <h2>Take the survey to find your best bud.</h2>
             
-            <ol>
-                
-                <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-                 <li>
-                    <h3>Question?</h3>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                        <p><input type="radio" name="q1" class="radio-button" id=""> Answer</p>
-                </li>
-                
-            </ol>
-            
-            <button type="button" class="btn btn-default" id="submit-button">Submit</button>
-            
             <hr>
             
-            <a href="/api/friends">API Friend List</a>
+            <!--form-->
+            <form action="/api/friends" method="post">
+                
+                <!--name-->
+                <div class="input">
+                  <span class="input-group-addon">Name:</span>
+                  <input type="text" class="form-control" name="name" placeholder="Name">
+                </div>
+                
+                <br>
+
+                <!--photo-->
+                <div class="input">
+                    <span class="input-group-addon">Photo URL</span>
+                    <input type="text" class="form-control" name="photoUrl">
+                </div>
+                
+                <!--survey-->
+                <ol>
+                    
+                    <!--q1-->
+                    <li>
+                        <h3>What's your idea of a good Friday night?</h3>
+                        <p>
+                            <input type="radio" name="q1" class="radio-button" id="q-1-4" value="4"> 
+                            Drinks and Dancing
+                        </p>
+                        <p>
+                            <input type="radio" name="q1" class="radio-button" id="q-1-3" value="3"> 
+                            Dinner, a movie out, maybe a chill night at the bar.
+                        </p>
+                        <p>
+                            <input type="radio" name="q1" class="radio-button" id="q-1-2" value="2"> 
+                            Netflix and Chill?
+                        </p>
+                        <p>
+                            <input type="radio" name="q1" class="radio-button" id="q-1-1" value="1"> 
+                            Sleep.
+                        </p>
+                    </li>
+
+                    <!--q2-->
+                     <li>
+                        <h3>You haven't seen your friend in FOREVER. When you finally hang out, what do you do?</h3>
+                        <p>
+                            <input type="radio" name="q2" class="radio-button" id="q-2-4" value="4"> 
+                            PARTY. Drinks all day. Dance all night.
+                        </p>
+                        <p>
+                            <input type="radio" name="q2" class="radio-button" id="q-2-3" value="3"> 
+                            Grab a bite, maybe a cup of coffee.
+                        </p>
+                        <p>
+                            <input type="radio" name="q2" class="radio-button" id="q-2-2" value="2"> 
+                            Kick back, maybe have dinner or beer at one another's place.
+                        </p>
+                        <p>
+                            <input type="radio" name="q2" class="radio-button" id="q-2-1" value="1"> 
+                            We don't. I sleep.
+                        </p>
+                    </li>
+
+                    <!--q3-->
+                     <li>
+                        <h3>Your mom calls. She wants to catch up. Where do you suggest you and her meet?</h3>
+                        <p>
+                            <input type="radio" name="q3" class="radio-button" id="q-3-4" value="4"> 
+                            At the club. J/k. But I would if she would.
+                        </p>
+                        <p>
+                            <input type="radio" name="q3" class="radio-button" id="q-3-3" value="3"> 
+                            A casual lunch or dinner restaurant.
+                        </p>
+                        <p>
+                            <input type="radio" name="q3" class="radio-button" id="q-3-2" value="2"> 
+                            Family dinner. Mmmmm. Homecooked meals.
+                        </p>
+                        <p>
+                            <input type="radio" name="q3" class="radio-button" id="q-3-1" value="1"> 
+                            I don't. I sleep.
+                        </p>
+                    </li>
+
+                    <!--q4-->
+                    <li>
+                        <h3>You have a whole week off from any obligation. What do you do?</h3>
+                        <p>
+                            <input type="radio" name="q4" class="radio-button" id="q-4-4" value="4"> 
+                            Socialize. Drink. Travel. Anything but stay home.
+                        </p>
+                        <p>
+                            <input type="radio" name="q4" class="radio-button" id="q-4-3" value="3"> 
+                            Run some needed errands, see some friends, dinner with the family, but definitely save some downtime for myself.
+                        </p>
+                        <p>
+                            <input type="radio" name="q4" class="radio-button" id="q-4-2" value="2"> 
+                            Read, watch movies, cook, order in...I may venture out to restock food supply.
+                        </p>
+                        <p>
+                            <input type="radio" name="q4" class="radio-button" id="q-4-1" value="1"> 
+                            Sleeeeeeeeeep. ZzzZzzZzz
+                        </p>
+                    </li>
+
+                    <!--q5-->
+                    <li>
+                        <h3>The person closest to you shows up at 7 a.m. on your birthday, saying they have your perfect day planned. What do they have lined up for you?</h3>
+
+                        <p>
+                             <input type="radio" name="q5" class="radio-button" id="q-5-4" value="4"> 
+                             First off, they wouldn't show up at 7 a.m. Maybe more like 10 a.m., or noon. We would start with breakfast and mimosas, shop, meet with friends, change, eat again, then get ready for the best night of our lives.
+                        </p>
+                        <p>
+                            <input type="radio" name="q5" class="radio-button" id="q-5-3" value="3"> 
+                            Coffee, breakfast, and then something adventurous.
+                        </p>
+                        <p>
+                            <input type="radio" name="q5" class="radio-button" id="q-5-2" value="2"> 
+                            They would have shown up with a whole bag of books, movies, and/or games. They would have had to make a second trip to the car for all the food and snacks they brought too. 
+                        </p>
+                        <p>
+                            <input type="radio" name="q5" class="radio-button" id="q-5-1" value="1"> 
+                            They would show up in their jammies. We would sleep.
+                        </p>
+                    </li>
+
+                    <!--q6-->
+                    <li>
+                        <h3>What's your favorite past time?</h3>
+                        <p>
+                            <input type="radio" name="q6" class="radio-button" id="q-6-4" value="4"> 
+                            Having a good time with friends.
+                        </p>
+                        <p>
+                            <input type="radio" name="q6" class="radio-button" id="q-6-3" value="3"> 
+                            Laid back hobbies, with friends, but I need some solo time too.
+                        </p>
+                        <p>
+                            <input type="radio" name="q6" class="radio-button" id="q-6-2" value="2"> 
+                            Binge watching my faves.
+                        </p>
+                        <p>
+                            <input type="radio" name="q6" class="radio-button" id="q-6-1" value="1"> 
+                            Sleep. Always sleep.
+                        </p>
+                    </li>
+
+                    <!--q7-->
+                    <li>
+                        <h3>Which movie do you like more?</h3>
+                        <p>
+                            <input type="radio" name="q7" class="radio-button" id="q-7-4" value="4"> 
+                            Neighbors
+                        </p>
+                        <p>
+                            <input type="radio" name="q7" class="radio-button" id="q-7-3" value="3"> 
+                            Arrival
+                        </p>
+                        <p>
+                            <input type="radio" name="q7" class="radio-button" id="q-7-2" value="2"> 
+                            All movies ever.
+                        </p>
+                        <p>
+                            <input type="radio" name="q7" class="radio-button" id="q-7-1" value="1"> 
+                            Sleeping Beauty. While You Were Sleeping. Snow White and The Seven Dwarves (Sleepy is the best).
+                        </p>
+                    </li>
+
+                    <!--q8-->
+                    <li>
+                        <h3>Speaking of Snow White and the Seven Dwarves, which dwarf are you?</h3>
+                        <p>
+                            <input type="radio" name="q8" class="radio-button" id="q-8-4" value="4"> 
+                            Drunky, is there a Drunky?
+                        </p>
+                        <p>
+                            <input type="radio" name="q8" class="radio-button" id="q-8-3" value="3"> 
+                            Happy
+                        </p>
+                        <p>
+                            <input type="radio" name="q8" class="radio-button" id="q-8-2" value="2"> 
+                            Bashful
+                        </p>
+                        <p>
+                            <input type="radio" name="q8" class="radio-button" id="q-8-1" value="1"> 
+                            Sleepy
+                        </p>
+                    </li>
+
+                    <!--q9-->
+                    <li>
+                        <h3>How are you feeling today?</h3>
+                        <p>
+                            <input type="radio" name="q9" class="radio-button" id="q-9-4" value="4"> 
+                            A bit hungover, sleepy.
+                        </p>
+                        <p>
+                            <input type="radio" name="q9" class="radio-button" id="q-9-3" value="3"> 
+                            Not bad. I'm just ready for the weekend.
+                        </p>
+                        <p>
+                            <input type="radio" name="q9" class="radio-button" id="q-9-2" value="2"> 
+                            I NEED MY COMFY CLOTHES AND COUCH.
+                        </p>
+                        <p>
+                            <input type="radio" name="q9" class="radio-button" id="q-9-1" value="1"> 
+                            Like  I need to sleep.
+                        </p>
+                    </li>
+
+
+                    <!--q10-->
+                    <li>
+                        <h3>Final question. On a scale of 1-10, how social would you rate yourself?</h3>
+                        <p>
+                            <input type="radio" name="q10" class="radio-button" id="q-10-4" value="4"> 
+                            Definitely a 10, in more ways than one.
+                        </p>
+                        <p>
+                            <input type="radio" name="q10" class="radio-button" id="q-10-3" value="3"> 
+                            5, 6, 7ish - It depends on the day.
+                        </p>
+                        <p>
+                            <input type="radio" name="q10" class="radio-button" id="q-10-2" value="2"> 
+                            2, 3, tops.
+                        </p>
+                        <p>
+                            <input type="radio" name="q10" class="radio-button" id="q-10-1" value="1"> 
+                            Is 0 and option.
+                        </p>
+                    </li>
+
+                </ol>
+
+                <br>
+
+                <!--submit button-->
+                <input type="submit" class="btn btn-default" id="submit-button" >
+                
+             </form>
+            
+            <hr>
+            <!--api link-->
+            <a href="#">API Friend List</a>
             
             |
-            
+            <!--home link-->
             <a href="home.html">Home</a>
             
         </div>
             
 </body>
-    
+    <!--javascipt-->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     
